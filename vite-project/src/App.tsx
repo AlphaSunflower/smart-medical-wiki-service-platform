@@ -7,6 +7,7 @@ import { useAppSelector } from './store/hooks';
 import { heartbeat } from './api/user';
 import { logout } from './api/auth';
 import { store } from './store';
+import DisclaimerModal from './components/DisclaimerModal';
 
 const App: React.FC = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -62,10 +63,10 @@ const App: React.FC = () => {
       <AntApp>
 
         {contextHolder}
+        <DisclaimerModal />
         <RouterProvider router={router} />
       </AntApp>
     </ConfigProvider>
   );
 };
-
 export default App;

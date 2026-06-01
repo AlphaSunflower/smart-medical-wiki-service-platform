@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Card, Row, Col, Button, Carousel, Statistic, Form, Input, Select, message, Tag, Image, Spin } from 'antd';
+import { Typography, Card, Row, Col, Button, Carousel, Statistic, Form, Input, Select, message, Tag, Image, Spin, Alert } from 'antd';
 import {
   RobotOutlined,
   MedicineBoxOutlined,
@@ -107,6 +107,16 @@ const HomePage: React.FC = () => {
 
   return (
     <div className={styles.homePage}>
+      {/* 免责声明 */}
+      <Alert
+        message="重要声明"
+        description="本站为个人学习开发项目，仅供技术学习与交流使用，不涉及任何商业利益及金钱收益。网站所展示的医疗信息仅供参考，不具备医学权威性，请勿将本站内容用于实际医疗诊断或治疗决策。"
+        type="warning"
+        showIcon
+        closable
+        className={styles.disclaimerAlert}
+      />
+
       {/* Banner区域 */}
       <section className={styles.banner}>
         <Carousel autoplay>
